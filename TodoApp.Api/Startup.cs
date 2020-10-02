@@ -10,7 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using TodoApp.Api.Services;
+using TodoApp.Application;
 using TodoApp.DataAccess;
+using TodoApp.Implementation.Logging;
 
 namespace TodoApp.Api
 {
@@ -28,6 +30,7 @@ namespace TodoApp.Api
             services.AddControllers();
 
             services.AddTransient<TodoAppContext>();
+            services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
 
             services.AddCommandServices();
             services.AddQueryServices();
