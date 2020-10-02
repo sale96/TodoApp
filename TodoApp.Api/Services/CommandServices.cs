@@ -14,6 +14,7 @@ namespace TodoApp.Api.Services
         {
             services.AddTransient<IAddTodoCommand, AddTodoCommand>();
             services.AddTransient<IUpdateTodoCommand, UpdateTodoCommand>();
+            services.AddTransient<IDeleteTodoCommand, DeleteTodoCommand>();
 
             return services;
         }

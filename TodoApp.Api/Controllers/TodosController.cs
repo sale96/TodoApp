@@ -62,8 +62,13 @@ namespace TodoApp.Api.Controllers
 
         // DELETE api/<TodosController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(
+            int id,
+            [FromServices] IDeleteTodoCommand command)
         {
+            _executor.ExecuteCommand(command, id);
+
+            return NoContent();
         }
     }
 }
