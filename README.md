@@ -3,7 +3,7 @@
 ## Project info
 
 - Packages C#
-     - Microsoft.EntityFrameWorkCore
+     - Microsoft.EntityFrameworkCore
      - FluentValidation
      - Newtonsoft.JSON
 
