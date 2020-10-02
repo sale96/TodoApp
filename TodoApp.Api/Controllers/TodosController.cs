@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using TodoApp.Application;
 using TodoApp.Application.Commands.Todo;
 using TodoApp.Application.DataTransfer;
+using TodoApp.Application.Queries.Todo;
+using TodoApp.Application.Searches;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,9 +26,11 @@ namespace TodoApp.Api.Controllers
 
         // GET: api/<TodosController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get(
+            [FromQuery] TodoSearch search,
+            [FromServices] IGetTodosQuery query)
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_executor.ExecuteQuery(query, search));
         }
 
         // GET api/<TodosController>/5
