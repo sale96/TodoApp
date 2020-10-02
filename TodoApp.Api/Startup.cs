@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TodoApp.Api.Core;
 using TodoApp.Api.Services;
 using TodoApp.Application;
 using TodoApp.DataAccess;
@@ -46,6 +47,8 @@ namespace TodoApp.Api
             }
 
             app.UseRouting();
+
+            app.UseMiddleware<GlobalExceptionHandler>();
 
             app.UseAuthorization();
 
