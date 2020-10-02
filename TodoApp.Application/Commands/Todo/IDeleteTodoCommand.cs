@@ -5,7 +5,7 @@ using TodoApp.Application.DataTransfer;
 
 namespace TodoApp.Application.Commands.Todo
 {
-    public interface IDeleteTodoCommand : ICommand<TodoDto>
+    public interface IDeleteTodoCommand : ICommand<int>
     {
     }
 }
