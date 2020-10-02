@@ -35,9 +35,11 @@ namespace TodoApp.Api.Controllers
 
         // GET api/<TodosController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(
+            int id,
+            [FromServices] IGetSingleTodoQuery query)
         {
-            return "value";
+            return Ok(_executor.ExecuteQuery(query, id));
         }
 
         // POST api/<TodosController>
