@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using TodoApp.Application.DataTransfer;
 using TodoApp.Application.Queries;
 using TodoApp.Application.Queries.Todo;

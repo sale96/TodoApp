@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TodoApp.Application.Commands.Todo;
+﻿using TodoApp.Application.Commands.Todo;
 using TodoApp.DataAccess;
-using System.Linq;
 using TodoApp.Application.Exceptions;
 using TodoApp.Domain;
 

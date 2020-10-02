@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TodoApp.Application.Queries
+﻿namespace TodoApp.Application.Queries
 {
     public abstract class PagedSearch
     {

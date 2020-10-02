@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TodoApp.Domain
+﻿namespace TodoApp.Domain
 {
     public class Todo : BaseEntity
     {

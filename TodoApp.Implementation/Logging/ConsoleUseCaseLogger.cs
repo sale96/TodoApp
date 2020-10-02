@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using TodoApp.Application;
 
 namespace TodoApp.Implementation.Logging

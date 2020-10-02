@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TodoApp.Application;
 using TodoApp.Application.Commands.Todo;
 using TodoApp.Application.DataTransfer;
 using TodoApp.Application.Queries.Todo;
 using TodoApp.Application.Searches;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TodoApp.Api.Controllers
 {

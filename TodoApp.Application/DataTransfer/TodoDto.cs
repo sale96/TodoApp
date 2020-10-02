@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TodoApp.Domain;
+﻿using TodoApp.Domain;
 
 namespace TodoApp.Application.DataTransfer
 {
