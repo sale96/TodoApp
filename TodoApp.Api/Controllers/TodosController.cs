@@ -44,7 +44,7 @@ namespace TodoApp.Api.Controllers
         {
             _executor.ExecuteCommand(command, todo);
 
-            return Ok();
+            return NoContent();
         }
 
         // PUT api/<TodosController>/5
