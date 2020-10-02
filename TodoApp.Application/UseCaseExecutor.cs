@@ -6,14 +6,17 @@ namespace TodoApp.Application
 {
     public class UseCaseExecutor
     {
-        public UseCaseExecutor()
+        private readonly IUseCaseLogger _logger;
+        public UseCaseExecutor(IUseCaseLogger logger)
         {
+            _logger = logger;
         }
 
         public void ExecuteCommand<TRequest>(
             ICommand<TRequest> command,
             TRequest request)
         {
+            _logger.Log(command, request);
             command.Execute(request);
         }
     }
