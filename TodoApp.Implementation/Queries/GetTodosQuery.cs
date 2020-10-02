@@ -42,6 +42,7 @@ namespace TodoApp.Implementation.Queries
                     {
                         Id = x.Id,
                         Name = x.Name,
+                        Description = x.Description,
                         IsFinished = x.IsFinished,
                         Status = x.Status
                     }).ToList()
