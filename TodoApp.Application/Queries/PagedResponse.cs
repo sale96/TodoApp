@@ -11,6 +11,6 @@ namespace TodoApp.Application.Queries
         public int ItemsPerPage { get; set; }
 
         public int PagesCount => (int)Math.Ceiling((float)TotalCount / ItemsPerPage);
-        public IEnumerable<T> Items;
+        public IEnumerable<T> Items { get; set; }
     }
 }
