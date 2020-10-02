@@ -31,6 +31,7 @@ namespace TodoApp.Api
 
             services.AddTransient<TodoAppContext>();
             services.AddTransient<IUseCaseLogger, ConsoleUseCaseLogger>();
+            services.AddTransient<UseCaseExecutor>();
 
             services.AddCommandServices();
             services.AddQueryServices();
