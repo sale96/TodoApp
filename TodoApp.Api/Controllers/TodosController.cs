@@ -49,13 +49,15 @@ namespace TodoApp.Api.Controllers
 
         // PUT api/<TodosController>/5
         [HttpPut("{id}")]
-        public void Put(
+        public IActionResult Put(
             int id,
             [FromBody] TodoDto todo,
             [FromServices] IUpdateTodoCommand command)
         {
             todo.Id = id;
             _executor.ExecuteCommand(command, todo);
+
+            return NoContent();
         }
 
         // DELETE api/<TodosController>/5
