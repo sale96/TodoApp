@@ -13,6 +13,7 @@ namespace TodoApp.Api.Services
         public static IServiceCollection AddQueryServices(this IServiceCollection services)
         {
             services.AddTransient<IGetTodosQuery, GetTodosQuery>();
+            services.AddTransient<IGetSingleTodoQuery, GetSingleTodoQuery>();
 
             return services;
         }
