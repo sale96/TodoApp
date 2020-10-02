@@ -12,6 +12,14 @@ namespace TodoApp.Application
             _logger = logger;
         }
 
+        public TResult ExecuteQuery<TSearch, TResult>(
+            IQuery<TSearch, TResult> query,
+            TSearch search)
+        {
+            _logger.Log(query, search);
+            return query.Execute(search);
+        }
+
         public void ExecuteCommand<TRequest>(
             ICommand<TRequest> command,
             TRequest request)
