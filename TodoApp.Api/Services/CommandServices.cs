@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoApp.Application.Commands.Todo;
+using TodoApp.Implementation.Commands.TodoCommands;
 
 namespace TodoApp.Api.Services
 {
@@ -10,6 +12,7 @@ namespace TodoApp.Api.Services
     {
         public static IServiceCollection AddCommandServices(this IServiceCollection services)
         {
+            services.AddTransient<IAddTodoCommand, AddTodoCommand>();
 
             return services;
         }
