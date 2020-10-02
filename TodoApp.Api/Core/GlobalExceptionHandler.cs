@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoApp.Application.Exceptions;
 
 namespace TodoApp.Api.Core
 {
@@ -41,6 +42,13 @@ namespace TodoApp.Api.Core
                                 x.PropertyName,
                                 x.ErrorMessage
                             })
+                        };
+                        break;
+                    case EntityNotFoundException _:
+                        statusCode = StatusCodes.Status404NotFound;
+                        response = new
+                        {
+                            message = "Resource not found."
                         };
                         break;
                     default:

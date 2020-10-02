@@ -12,6 +12,8 @@ namespace TodoApp.Api.Services
         public static IServiceCollection AddValidationServices(this IServiceCollection services)
         {
             services.AddTransient<CreateTodoValidator>();
+            services.AddTransient<UpdateTodoValidator>();
+
             return services;
         }
     }

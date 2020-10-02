@@ -13,6 +13,7 @@ namespace TodoApp.Api.Services
         public static IServiceCollection AddCommandServices(this IServiceCollection services)
         {
             services.AddTransient<IAddTodoCommand, AddTodoCommand>();
+            services.AddTransient<IUpdateTodoCommand, UpdateTodoCommand>();
 
             return services;
         }
