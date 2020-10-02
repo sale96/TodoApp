@@ -1,19 +1,26 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TodoApp.Application.Commands.Todo;
 using TodoApp.Application.DataTransfer;
 using TodoApp.DataAccess;
 using TodoApp.Domain;
+using TodoApp.Implementation.Validators;
 
 namespace TodoApp.Implementation.Commands.TodoCommands
 {
     public class AddTodoCommand : IAddTodoCommand
     {
         private readonly TodoAppContext _context;
-        public AddTodoCommand(TodoAppContext context)
+        private readonly CreateTodoValidator _validator;
+
+        public AddTodoCommand(
+            TodoAppContext context,
+            CreateTodoValidator validator)
         {
             _context = context;
+            _validator = validator;
         }
         public int Id => 1;
 
@@ -21,6 +28,8 @@ namespace TodoApp.Implementation.Commands.TodoCommands
 
         public void Execute(TodoDto request)
         {
+            _validator.ValidateAndThrow(request);
+
             Todo todo = new Todo
             {
                 Name = request.Name,
