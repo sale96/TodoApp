@@ -28,8 +28,9 @@ namespace TodoApp.Api.Controllers
 
         // POST api/<TodosController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] string value)
         {
+            return Ok();
         }
 
         // PUT api/<TodosController>/5
