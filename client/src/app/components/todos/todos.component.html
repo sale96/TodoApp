@@ -1,1 +1,5 @@
-<p>todos works!</p>
+<div class="wrapper">
+     <div class="todos">
+          <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
+     </div>
+</div>

@@ -1,9 +1,9 @@
 export class Todo {
      id: number;
      name: string;
-     description: string,
+     description: string;
      isFinished: boolean;
-     state: State;
+     status: State;
 }
 
 export enum State {

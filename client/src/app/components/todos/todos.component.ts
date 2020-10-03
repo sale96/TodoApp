@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo, State } from '../../models/Todo';
+import { TodoService } from '../../services/todo.service';
+import { PagedObject } from '../../models/PagedObject'; 
 
 @Component({
   selector: 'app-todos',
@@ -7,27 +9,23 @@ import { Todo, State } from '../../models/Todo';
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit {
+  pagedObject: PagedObject;
   todos: Todo[];
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
-    this.todos = [
-      {
-        id: 1,
-        name: "Todo 1",
-        description: "Description 1234",
-        isFinished: false,
-        state: State.lowPriority
-      },
-      {
-        id: 2,
-        name: "Todo 2",
-        description: "Description 1234",
-        isFinished: true,
-        state: State.mediumPriority
-      }
-    ];
+    this.todoService.getTodos().subscribe(pagedObj => {
+      this.pagedObject = pagedObj;
+      this.todos = pagedObj.items.sort((a, b) => {
+        if (a.status > b.status) {
+          return -1;
+        }else if (a.status < b.status) {
+          return 1;
+        }else {
+          return 0;
+        }
+      });
+    });
   }
-
 }

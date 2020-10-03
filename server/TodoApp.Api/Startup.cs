@@ -41,6 +41,12 @@ namespace TodoApp.Api
             }
 
             app.UseRouting();
+            app.UseCors(x =>
+            {
+                x.AllowAnyOrigin();
+                x.AllowAnyMethod();
+                x.AllowAnyHeader();
+            });
 
             app.UseMiddleware<GlobalExceptionHandler>();
 

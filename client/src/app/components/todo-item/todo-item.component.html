@@ -1,0 +1,18 @@
+<div [ngClass]="todo.isFinished ? 'todo-item todo-item-breakthrough' : 'todo-item'">
+     <div class="todo-item-finished">
+          <input type="checkbox" name="finished" (click)="onClickFinish($event)" id="finished" [checked]="todo.isFinished">
+     </div>
+     <div class="todo-item-id">{{todo.id}}</div>
+     <div class="todo-item-header">{{todo.name}}</div>
+     <div class="todo-item-description">{{todo.description.substring(0, 10)}}...</div>
+     <div class="todo-item-status">
+          <select (change)="onChangeState($event)" name="status" id="status">
+               <option [selected]="todo.status == 0" value="0">Low priority</option>
+               <option [selected]="todo.status == 1" value="1">Medium priority</option>
+               <option [selected]="todo.status == 2" value="2">High priority</option>
+          </select>
+     </div>
+     <div class="todo-item-controls">
+          <button (click)="onDeleteTodo($event)" class="button-delete">Delete</button>
+     </div>
+</div>
