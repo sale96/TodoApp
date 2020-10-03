@@ -15,6 +15,10 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodoService) { }
 
   ngOnInit(): void {
+    this.getAllTodos();
+  }
+
+  getAllTodos() {
     this.todoService.getTodos().subscribe(pagedObj => {
       this.pagedObject = pagedObj;
       this.todos = pagedObj.items.sort((a, b) => {
@@ -30,9 +34,8 @@ export class TodosComponent implements OnInit {
   }
 
   deleteTodo(event) {
-    this.todos = this.todos.filter(x => x.id != event.id);
     this.todoService.deleteTodo(event.id).subscribe(todo => {
-      console.log(todo);
+      this.getAllTodos();
     });
   }
 }
