@@ -1,1 +1,27 @@
-<p>add-todo works!</p>
+<form action="">
+     <div class="form-wrap">
+          <label for="name">Todo name</label>
+          <input class="form-input" type="text" id="name" name="name" [(ngModel)]="name" placeholder="Enter todo name...">
+     </div>
+     <div class="form-wrap">
+          <label for="isFinished">Is finished</label>
+          <input class="radio" type="checkbox" id="isFinished" name="isFinished" [(ngModel)]="isFinished">
+     </div>
+     <div class="form-wrap">
+          <label for="statust">Status</label>
+          <select name="statust" id="statust" class="form-input" [(ngModel)]="status">
+               <option value="0">Low priority</option>
+               <option value="1">Medium priority</option>
+               <option value="2">High priority</option>
+          </select>
+     </div>
+     <div class="form-wrap">
+          <label for="description">Description</label>
+          <textarea class="form-input" name="description" id="description" cols="30" rows="10" [(ngModel)]="description">
+
+          </textarea>
+     </div>
+     <div class="form-wrap">
+          <button (click)="addTodo()" class="button">Submit</button>
+     </div>
+</form>

@@ -1,9 +1,17 @@
-<div class="wrapper">
-     <div class="todos">
-          <app-todo-item 
-               *ngFor="let todo of todos"
-               [todo]="todo"
-               (deleteItem)="deleteTodo($event)">
-          </app-todo-item>
+
+
+<div class="container">
+     <div class="wrapper non-restrictive">
+          <app-add-todo (todoOutput)="addTodo($event)"></app-add-todo>
+     </div>
+     
+     <div class="wrapper">
+          <div class="todos">
+               <app-todo-item 
+                    *ngFor="let todo of todos"
+                    [todo]="todo"
+                    (deleteItem)="deleteTodo($event)">
+               </app-todo-item>
+          </div>
      </div>
 </div>

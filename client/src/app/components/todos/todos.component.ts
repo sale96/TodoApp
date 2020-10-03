@@ -38,4 +38,10 @@ export class TodosComponent implements OnInit {
       this.getAllTodos();
     });
   }
+
+  addTodo(event) {
+    this.todoService.addTodo(event).subscribe(todo => {
+      this.getAllTodos();
+    });
+  }
 }

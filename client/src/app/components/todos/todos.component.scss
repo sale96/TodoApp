@@ -1,12 +1,21 @@
-.wrapper {
-     width: 90%;
-     height: 400px;
-     margin: 0 auto;
-     display: flex;
-     justify-content: center;
-     align-items: center;
 
-     .todos {
-          width: 80%;
+.container {
+     width: 80%;
+     margin: 0 auto;
+
+     .wrapper {
+          width: 100%;
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .todos {
+               width: 80%;
+          }
+
+          &.non-restrictive {
+               display: block;
+          }
      }
 }
