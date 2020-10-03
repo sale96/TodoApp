@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../../models/Todo';
+import { Todo, State } from '../../models/Todo';
 
 @Component({
   selector: 'app-todos',
@@ -12,6 +12,22 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.todos = [
+      {
+        id: 1,
+        name: "Todo 1",
+        description: "Description 1234",
+        isFinished: false,
+        state: State.lowPriority
+      },
+      {
+        id: 2,
+        name: "Todo 2",
+        description: "Description 1234",
+        isFinished: true,
+        state: State.mediumPriority
+      }
+    ];
   }
 
 }
