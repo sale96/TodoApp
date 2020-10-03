@@ -28,4 +28,11 @@ export class TodosComponent implements OnInit {
       });
     });
   }
+
+  deleteTodo(event) {
+    this.todos = this.todos.filter(x => x.id != event.id);
+    this.todoService.deleteTodo(event.id).subscribe(todo => {
+      console.log(todo);
+    });
+  }
 }

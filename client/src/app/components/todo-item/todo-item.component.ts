@@ -10,7 +10,6 @@ import { TodoService } from '../../services/todo.service';
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
   @Output() deleteItem: EventEmitter<any> = new EventEmitter();
-  @Output() finishItem: EventEmitter<any> = new EventEmitter();
 
   constructor(private service: TodoService) {
   }
@@ -19,8 +18,8 @@ export class TodoItemComponent implements OnInit {
     console.log("Status: " + this.todo.status);
   }
 
-  onDeleteTodo(event) {
-    this.deleteItem.emit(this.todo.id);
+  onDeleteTodo(todo) {
+    this.deleteItem.emit(todo);
   }
 
   onClickFinish(event) {
