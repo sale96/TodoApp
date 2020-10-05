@@ -4,6 +4,7 @@ using TodoApp.Application.Queries;
 using TodoApp.Application.Queries.Todo;
 using TodoApp.Application.Searches;
 using TodoApp.DataAccess;
+using TodoApp.Domain;
 
 namespace TodoApp.Implementation.Queries
 {
@@ -28,6 +29,8 @@ namespace TodoApp.Implementation.Queries
                 query = query.Where(x => x.Name.ToLower().Contains(search.Name));
 
             var skipCount = search.PerPage * (search.Page - 1);
+
+            query = search.OrderBy.ToLower() == "desc" ? query.OrderByDescending(x => x.Name) : query.OrderBy(x => x.Name);
 
             var response = new PagedResponse<TodoDto>
             {

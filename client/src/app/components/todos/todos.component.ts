@@ -21,15 +21,7 @@ export class TodosComponent implements OnInit {
   getAllTodos() {
     this.todoService.getTodos().subscribe(pagedObj => {
       this.pagedObject = pagedObj;
-      this.todos = pagedObj.items.sort((a, b) => {
-        if (a.status > b.status) {
-          return -1;
-        }else if (a.status < b.status) {
-          return 1;
-        }else {
-          return 0;
-        }
-      });
+      this.todos = pagedObj.items;
     });
   }
 
